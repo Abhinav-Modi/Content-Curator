@@ -1,6 +1,7 @@
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import SubmitForm from "./components/SubmitForm";
+import CardGrid from "./components/CardGrid";
 
 export default async function DashboardPage() {
 	const session = await auth();
@@ -17,7 +18,7 @@ export default async function DashboardPage() {
 				<p className="mt-2 text-gray-600">Logged in as: {session.user.email}</p>
 			)}
 			<SubmitForm />
-			{/* We will add the <CardGrid> here later */}
+			<CardGrid />
 		</main>
 	);
 }
