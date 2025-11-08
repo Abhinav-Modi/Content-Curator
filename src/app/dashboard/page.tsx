@@ -1,7 +1,6 @@
-// src/app/dashboard/page.tsx
-
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
+import SubmitForm from "./components/SubmitForm";
 
 export default async function DashboardPage() {
 	const session = await auth();
@@ -17,6 +16,8 @@ export default async function DashboardPage() {
 			{session.user && (
 				<p className="mt-2 text-gray-600">Logged in as: {session.user.email}</p>
 			)}
+			<SubmitForm />
+			{/* We will add the <CardGrid> here later */}
 		</main>
 	);
 }
